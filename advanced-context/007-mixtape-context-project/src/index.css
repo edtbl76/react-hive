@@ -143,8 +143,7 @@
     padding: 10px;
   }
 
-  /* False Positive for css:S4659, Pseudo-class selectors. */
-  .controls :button,
+   button,
   .controls select {
     background: black;
     border: 3px solid gray;
