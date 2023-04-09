@@ -1,4 +1,3 @@
-
 export const ContactItem = ({ name, theme }) => {
     return (
         <div className={`theme-${theme}`}>
