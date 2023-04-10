@@ -15,6 +15,15 @@ const createThought = (text) => {
     };
 };
 
+const returnThought = (fun, id, thought) => {
+    return (
+        <Thought
+            removeThought={fun}
+            key={id}
+            thought={thought}
+        />
+    );
+}
 
 export const App = () => {
     const [ thoughts, setThoughts] = useState([
@@ -41,13 +50,9 @@ export const App = () => {
             resetErrorBoundary();
         }
 
-        return (
-            <Thought
-                removeThought={removeAndReset}
-                key={thought.id}
-                thought={thought}
-            />
-        );
+        // javascript:S6478. manages
+         return returnThought(removeAndReset, thought.id, thought);
+
     }
 
     return (
@@ -64,9 +69,7 @@ export const App = () => {
                             key={thought.id}
                             onError={logError}
                             FallbackComponent={
-                            (props) => {
-                                return <BlankThought {...props} thought={thought}/>
-                            }
+                                (props) => BlankThought({...props, thought})
                         }>
                             <Thought 
                                 removeThought={removeThought}

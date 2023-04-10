@@ -11,3 +11,4 @@ of duplicated code.
 
 - javascript:s6477 throws a handful of false positives w/ react-error-boundary ErrorBoundary
 - I don't have it connect to SQ, so FP isn't really an option and //NOSONAR isn't a good solution. 
+
