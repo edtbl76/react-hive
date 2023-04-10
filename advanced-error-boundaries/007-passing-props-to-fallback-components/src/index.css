@@ -1,0 +1,33 @@
+body, html {
+    margin: 0;
+    height: 100%;
+  }
+  
+  #root {
+    height: 100%;
+  }
+  
+  .flex { display: flex; }
+
+.flex-wrap { flex-wrap: wrap; }
+
+button {
+    width: 50%;
+    height: 25%;
+    margin: auto;
+  }
+  
+  .container, .lightSwitch {
+    display: flex; 
+  }
+  
+  .lightSwitch, div {
+    border: 1px solid grey;
+    flex-direction: column;
+    flex-basis: 100%;
+  }
+  .container {
+    flex-direction: row; 
+    flex-wrap: wrap;
+    height: 100%;
+  }
