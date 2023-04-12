@@ -1,14 +1,19 @@
-import { Form } from "react-router-dom";
+// noinspection HtmlUnknownTarget
+
+import { Form, useLoaderData } from "react-router-dom";
+import { getContact } from "../contacts";
+
 
 const Contact = () => {
-    const contact = {
+    let { contact } = useLoaderData();
+    contact = {
         first: "Your",
         last: "Name",
         avatar: "https://placekitten.com/g/200/200",
-        notes: "description",
-        twitter: "handle",
+        twitter: "your_handle",
+        notes: "Some notes",
         favorite: true,
-    };
+    }
 
     return (
         <div id="contact">
@@ -82,6 +87,11 @@ const Favorite = (contact) => {
             </button>
         </Form>
     );
+}
+
+export const loader = async ({params}) => {
+    const contact = await getContact(params.contactId);
+    return { contact };
 }
 
 export default Contact;

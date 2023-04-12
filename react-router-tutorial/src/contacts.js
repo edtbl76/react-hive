@@ -2,7 +2,7 @@ import localforage from "localforage";
 import { matchSorter } from "match-sorter";
 import sortBy from "sort-by";
 
-export async function getContacts(query) {
+export const getContacts = async (query)=>  {
     await fakeNetwork(`getContacts:${query}`);
     let contacts = await localforage.getItem("contacts");
     if (!contacts) contacts = [];
@@ -12,7 +12,7 @@ export async function getContacts(query) {
     return contacts.sort(sortBy("last", "createdAt"));
 }
 
-export async function createContact() {
+export const createContact = async () => {
     await fakeNetwork();
     let id = Math.random().toString(36).substring(2, 9);
     let contact = { id, createdAt: Date.now() };
@@ -22,14 +22,14 @@ export async function createContact() {
     return contact;
 }
 
-export async function getContact(id) {
+export const getContact = async (id) => {
     await fakeNetwork(`contact:${id}`);
     let contacts = await localforage.getItem("contacts");
     let contact = contacts.find(contact => contact.id === id);
     return contact ?? null;
 }
 
-export async function updateContact(id, updates) {
+export const updateContact = async (id) => {
     await fakeNetwork();
     let contacts = await localforage.getItem("contacts");
     let contact = contacts.find(contact => contact.id === id);
@@ -39,7 +39,7 @@ export async function updateContact(id, updates) {
     return contact;
 }
 
-export async function deleteContact(id) {
+export const deleteContact = async (id) => {
     let contacts = await localforage.getItem("contacts");
     let index = contacts.findIndex(contact => contact.id === id);
     if (index > -1) {
@@ -50,14 +50,14 @@ export async function deleteContact(id) {
     return false;
 }
 
-function set(contacts) {
+const set = (contacts) =>  {
     return localforage.setItem("contacts", contacts);
 }
 
 // fake a cache so we don't slow down stuff we've already seen
 let fakeCache = {};
 
-async function fakeNetwork(key) {
+const fakeNetwork =  async (key) => {
     if (!key) {
         fakeCache = {};
     }
