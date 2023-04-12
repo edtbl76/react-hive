@@ -1,3 +1,7 @@
 # react-router-tutorial
 
-npm run dev to start
+//TODO
+- The tutorial available on reactrouter.com is completely broken. 
+- Spend some time to look at it. 
+
+
