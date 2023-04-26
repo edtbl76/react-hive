@@ -14,3 +14,10 @@ of duplicated code.
 
 - advanced-react-optimization
   - update lessons/directories to make sense. 
+
+- react-router-tutorial
+  - completely broken
+  - team is aloof
+
+- project-flashcards-starter
+  - broken in react-router-dom v6 
