@@ -1,4 +1,4 @@
-# react-master
+# react-hive
 
 ## TODO
 - create-react-app doesn't support multiple entry points, so I need to find a way around this to reduce the amount

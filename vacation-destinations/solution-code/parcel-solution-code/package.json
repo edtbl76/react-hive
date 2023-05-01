@@ -1,0 +1,20 @@
+{
+  "name": "vacation-destinations",
+  "version": "1.0.0",
+  "description": "Parcel project code for Learn Build Tools course on Codecademy",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url ./"
+  },
+  "keywords": [],
+  "author": "Jiwon Shin",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
+    "parcel": "^2.0.0-rc.0"
+  }
+}

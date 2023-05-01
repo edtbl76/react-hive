@@ -1,0 +1,15 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  .theme-dark {
+    background: black;
+    color: #ddd;
+  }
+  
+  .theme-light {
+    background: white;
+    color: #111;
+  }
+  
