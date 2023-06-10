@@ -112,3 +112,4 @@ dist
 # misc
 .DS_Store
 **.idea
+/structure101-settings.java.hsw
